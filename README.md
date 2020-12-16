@@ -29,6 +29,8 @@ Things you may want to cover:
 
     * Тест
 
+    * Категории
+
     * Вопрос
 
     * Ответ
