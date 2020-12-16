@@ -21,5 +21,18 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# Test-Guru
+* Список сущностей:
+
+    * Администратор
+
+    * Пользователь
+
+    * Тест
+
+    * Вопрос
+
+    * Ответ
+
+    * Результат теста пользователя
+
+# TestGuru
