@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_191021) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
-    t.boolean "correct", default: false
+    t.boolean "correct", default: false, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_12_17_191021) do
 
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "level", default: 0
+    t.integer "level", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
