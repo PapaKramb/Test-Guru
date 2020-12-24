@@ -5,3 +5,54 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+return if User.exists?
+users = User.create!(
+  [
+    {name: 'Alexey', email: 'test@mail.com', password: '123456'},
+    {name: 'Katya', email: 'test1@mail.com', password: '654321'},
+    {name: 'Grogu', email: 'padavan@mail.com', password: 'qwerty'}
+  ]
+)
+
+return if Category.exists?
+categories = Category.create!(
+  [
+    {title: 'Ruby'},
+    {title: 'HTML'},
+    {title: 'CSS'}
+  ]
+)
+
+return if Test.exists?
+tests = Test.create!(
+  [
+    {title: 'Ruby on Rails', category_id: categories[0], level: 3, user_id: users[0]},
+    {title: 'HyperText Markup Language', category_id: categories[1], level: 2, user_id: users[1]},
+    {title: 'Cascading Style Sheets', category_id: categories[2], level: 1, user_id: users[2]}
+  ]
+)
+
+return if Question.exists?
+questions = Question.create!(
+  [
+    {boby: 'ROR question 1', test_id: tests[0]},
+    {boby: 'HTML question 1', test_id: tests[1]},
+    {boby: 'CSS question 1', test_id: tests[2]}
+  ]
+)
+
+return if Answer.exists?
+answers = Answer.create!(
+  [
+    {body: 'Answer A', question_id: questions[0], correct: true},
+    {body: 'Answer B', question_id: questions[0]},
+    {body: 'Answer C', question_id: questions[0]},
+    {body: 'Answer A', question_id: questions[1]},
+    {body: 'Answer B', question_id: questions[1], correct: true},
+    {body: 'Answer C', question_id: questions[1]},
+    {body: 'Answer A', question_id: questions[3]},
+    {body: 'Answer B', question_id: questions[3]},
+    {body: 'Answer C', question_id: questions[3], correct: true},
+  ]
+)
