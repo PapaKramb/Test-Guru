@@ -27,32 +27,32 @@ categories = Category.create!(
 return if Test.exists?
 tests = Test.create!(
   [
-    {title: 'Ruby on Rails', category_id: 1, level: 3, user_id: 1},
-    {title: 'HyperText Markup Language', category_id: 2, level: 2, user_id: 2},
-    {title: 'Cascading Style Sheets', category_id: 3, level: 1, user_id: 3}
+    {title: 'Ruby on Rails', category_id: categories.first, level: 3, user_id: 1},
+    {title: 'HyperText Markup Language', categories.second, level: 2, user_id: 2},
+    {title: 'Cascading Style Sheets', categories.third, level: 1, user_id: 3}
   ]
 )
 
 return if Question.exists?
 questions = Question.create!(
   [
-    {boby: 'ROR question 1', test_id: 1},
-    {boby: 'HTML question 1', test_id: 2},
-    {boby: 'CSS question 1', test_id: 3}
+    {boby: 'ROR question 1', test_id: tests.first},
+    {boby: 'HTML question 1', test_id: tests.second},
+    {boby: 'CSS question 1', test_id: tests.third}
   ]
 )
 
 return if Answer.exists?
 answers = Answer.create!(
   [
-    {body: 'Answer A', question_id: 1, correct: true},
-    {body: 'Answer B', question_id: 1},
-    {body: 'Answer C', question_id: 1},
-    {body: 'Answer A', question_id: 2},
-    {body: 'Answer B', question_id: 2, correct: true},
-    {body: 'Answer C', question_id: 2},
-    {body: 'Answer A', question_id: 3},
-    {body: 'Answer B', question_id: 3},
-    {body: 'Answer C', question_id: 3, correct: true},
+    {body: 'Answer A', question_id: questions.first, correct: true},
+    {body: 'Answer B', question_id: questions.first},
+    {body: 'Answer C', question_id: questions.first},
+    {body: 'Answer A', question_id: questions.second},
+    {body: 'Answer B', question_id: questions.second, correct: true},
+    {body: 'Answer C', question_id: questions.second},
+    {body: 'Answer A', question_id: questions.third},
+    {body: 'Answer B', question_id: questions.third},
+    {body: 'Answer C', question_id: questions.third, correct: true},
   ]
 )
