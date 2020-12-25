@@ -28,8 +28,8 @@ return if Test.exists?
 tests = Test.create!(
   [
     {title: 'Ruby on Rails', category_id: categories.first, level: 3, user_id: users.first},
-    {title: 'HyperText Markup Language', categories.second, level: 2, user_id: users.second},
-    {title: 'Cascading Style Sheets', categories.third, level: 1, user_id: users.third}
+    {title: 'HyperText Markup Language', category_id: categories.second, level: 2, user_id: users.second},
+    {title: 'Cascading Style Sheets', category_id: categories.third, level: 1, user_id: users.third}
   ]
 )
 
