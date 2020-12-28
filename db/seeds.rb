@@ -27,32 +27,32 @@ categories = Category.create!(
 return if Test.exists?
 tests = Test.create!(
   [
-    {title: 'Ruby on Rails', category_id: categories.first, level: 3, user_id: users.first},
-    {title: 'HyperText Markup Language', category_id: categories.second, level: 2, user_id: users.second},
-    {title: 'Cascading Style Sheets', category_id: categories.third, level: 1, user_id: users.third}
+    {title: 'Ruby on Rails', category: categories[0], level: 3, author: users[0]},
+    {title: 'HyperText Markup Language', category: categories[1], level: 2, author: users[1]},
+    {title: 'Cascading Style Sheets', category: categories[2], level: 1, author: users.[2]}
   ]
 )
 
 return if Question.exists?
 questions = Question.create!(
   [
-    {boby: 'ROR question 1', test_id: tests.first},
-    {boby: 'HTML question 1', test_id: tests.second},
-    {boby: 'CSS question 1', test_id: tests.third}
+    {boby: 'ROR question 1', test: tests[0]},
+    {boby: 'HTML question 1', test: tests[1]},
+    {boby: 'CSS question 1', test: tests.[2]}
   ]
 )
 
 return if Answer.exists?
 answers = Answer.create!(
   [
-    {body: 'Answer A', question_id: questions.first, correct: true},
-    {body: 'Answer B', question_id: questions.first},
-    {body: 'Answer C', question_id: questions.first},
-    {body: 'Answer A', question_id: questions.second},
-    {body: 'Answer B', question_id: questions.second, correct: true},
-    {body: 'Answer C', question_id: questions.second},
-    {body: 'Answer A', question_id: questions.third},
-    {body: 'Answer B', question_id: questions.third},
-    {body: 'Answer C', question_id: questions.third, correct: true},
+    {body: 'Answer A', question: questions[0], correct: true},
+    {body: 'Answer B', question: questions[0]},
+    {body: 'Answer C', question: questions[0]},
+    {body: 'Answer A', question: questions[1]},
+    {body: 'Answer B', question: questions[1], correct: true},
+    {body: 'Answer C', question: questions[1]},
+    {body: 'Answer A', question: questions[2]},
+    {body: 'Answer B', question: questions[2]},
+    {body: 'Answer C', question: questions[2], correct: true},
   ]
 )
