@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :tests, dependent: :destroy
-  has_many :completed_tests, dependent: :destroy # Не совсем понимаю, нужна ли эта связь, когда уже есть :tests_completed?
+  has_many :completed_tests, dependent: :destroy
   has_many :tests_completed, through: :completed_tests, class_name: "CompletedTest", foreign_key: "user_id"
 
   validates :name, presence: true
