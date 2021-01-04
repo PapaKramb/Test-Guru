@@ -8,11 +8,13 @@ class Test < ApplicationRecord
   validates :title, uniqueness: true, presence: true
   validates :level, uniqueness: { scope: :title }, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, presence: true
 
-  scope :easy, -> {where(level: 0..1)}
-  scope :medium, -> {where(level: 2..4)}
-  scope :hard, -> {where(level: 5..Float::INFINITY)}
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
+  scope :by_category, ->(category) { joins(:category).where(categories: {title: category}) }
 
   def self.title_tests_categories(category)
-    joins(:category).where(categories: {title: category}).order(title: :desc).pluck(:title)
+    by_category(category).order(title: :desc).pluck(:title)
   end
 end
