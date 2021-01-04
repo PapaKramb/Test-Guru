@@ -36,9 +36,9 @@ tests = Test.create!(
 return if Question.exists?
 questions = Question.create!(
   [
-    {boby: 'ROR question 1', test: tests[0]},
-    {boby: 'HTML question 1', test: tests[1]},
-    {boby: 'CSS question 1', test: tests[2]}
+    {body: 'ROR question 1', test: tests[0]},
+    {body: 'HTML question 1', test: tests[1]},
+    {body: 'CSS question 1', test: tests[2]}
   ]
 )
 
