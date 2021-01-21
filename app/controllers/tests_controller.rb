@@ -19,17 +19,11 @@ class TestsController < ApplicationController
     end
   end
 
-  def edit
-    @test = Test.find(params[:id])
-  end
+  def edit; end
 
-  def show
-    @test = Test.find(params[:id])
-  end
+  def show; end
 
   def update
-    @test = Test.find(params[:id])
-
     if @test.update(test_params)
       redirect_to @test
     else
@@ -38,11 +32,9 @@ class TestsController < ApplicationController
   end
 
   def destroy
-    @test = Test.find(params[:id])
     @test.destroy
 
     redirect_to tests_path
-
   end
 
   private
