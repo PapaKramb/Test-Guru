@@ -1,0 +1,13 @@
+<h1>The <%= @completed_test.test.title %> test finished.</h1>
+
+<p>
+  Correct answers: <%= @completed_test.correct_questions %> of <%= @completed_test.test.questions.count %>
+</p>
+
+<p>
+  <strong>
+    <%= result_message(@completed_test) %>
+  </strong>
+</p>
+
+<%= link_to 'Back to tests', tests_path %>

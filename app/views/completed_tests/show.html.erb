@@ -1,0 +1,22 @@
+<h1>Passing the <%= @completed_test.test.title %> Test</h1>
+
+<h2>Question #<%= @completed_test.current_question_number %> of <%= @completed_test.questions_count %></h2>
+
+<strong>
+  <%= @completed_test.current_question.body %>
+</strong>
+
+<%= form_with url: completed_test_path(@completed_test), local: true, method: :put do |form| %>
+  <%= form.collection_check_boxes :answer_ids, @completed_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
+    <p>
+      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.label %>
+    </p>
+    <% end %>
+
+  <p>
+    <%= form.submit 'Next' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back to Tests', tests_path %>

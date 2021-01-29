@@ -28,11 +28,13 @@ ActiveRecord::Schema.define(version: 2020_12_25_170352) do
   end
 
   create_table "completed_tests", force: :cascade do |t|
-    t.boolean "completed", default: false, null: false
     t.integer "user_id", null: false
     t.integer "test_id", null: false
+    t.integer "current_question_id", null: false
+    t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["current_question_id"], name: "index_completed_tests_on_current_question_id"
     t.index ["test_id"], name: "index_completed_tests_on_test_id"
     t.index ["user_id"], name: "index_completed_tests_on_user_id"
   end
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_12_25_170352) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "completed_tests", "current_questions"
   add_foreign_key "completed_tests", "tests"
   add_foreign_key "completed_tests", "users"
   add_foreign_key "questions", "tests"
