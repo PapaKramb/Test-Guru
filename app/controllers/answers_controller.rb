@@ -48,4 +48,3 @@ class AnswersController < ApplicationController
     params.require(:answer).permit(:body, :correct)
   end
 end
-end
