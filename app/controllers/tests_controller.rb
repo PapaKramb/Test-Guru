@@ -40,7 +40,6 @@ class TestsController < ApplicationController
 
   def start
     @user.tests.push(@test)
-
     redirect_to @user.completed_test(@test)
   end
 

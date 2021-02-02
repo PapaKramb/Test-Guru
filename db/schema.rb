@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2020_12_25_170352) do
   create_table "completed_tests", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.integer "current_question_id", null: false
+    t.integer "current_question_id"
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_12_25_170352) do
   end
 
   add_foreign_key "answers", "questions"
-  add_foreign_key "completed_tests", "current_questions"
+  add_foreign_key "completed_tests", "questions", column: "current_question_id"
   add_foreign_key "completed_tests", "tests"
   add_foreign_key "completed_tests", "users"
   add_foreign_key "questions", "tests"
