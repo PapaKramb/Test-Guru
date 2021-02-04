@@ -1,5 +1,5 @@
 class CompletedTest < ApplicationRecord
-  SUCCESS = 85.0.freeze
+  SUCCESS = 85.0
 
   belongs_to :user
   belongs_to :test
@@ -40,6 +40,10 @@ class CompletedTest < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
+    if answer_ids.nil?
+      return test_result
+    end
+
     correct_answers.ids.sort == answer_ids.map(&:to_i).sort
   end
 
