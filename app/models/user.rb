@@ -2,8 +2,6 @@ require 'digest/sha1'
 
 class User < ApplicationRecord
 
-  include Auth
-
   has_many :completed_tests
   has_many :tests, through: :completed_tests
   has_many :authored_tests, class_name: 'Test'
