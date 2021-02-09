@@ -1,5 +1,3 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
 
   has_many :completed_tests
@@ -8,9 +6,7 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  # validates :email, uniqueness: true, presence: true
-  # validates :password, length: { in: 6..20 }, presence: true, if: Proc.new { |u| u.password_digest.blank? }
-  # validates :password, confirmation: true
+  validates :email, uniqueness: true, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Invalid email format' }
 
   def user_tests_level(level)
     tests.where(level: level)
