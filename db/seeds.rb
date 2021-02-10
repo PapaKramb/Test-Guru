@@ -9,9 +9,9 @@
 return if User.exists?
 users = User.create!(
   [
-    {name: 'Alexey', email: 'test@mail.com', password: '123456'},
-    {name: 'Katya', email: 'test1@mail.com', password: '654321'},
-    {name: 'Grogu', email: 'padavan@mail.com', password: 'qwerty'}
+    {email: 'test@mail.com', password_digest: '123456'},
+    {email: 'test1@mail.com', password_digest: '654321'},
+    {email: 'padavan@mail.com', password_digest: 'qwerty'}
   ]
 )
 

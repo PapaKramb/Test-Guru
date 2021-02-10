@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_test, only: %i[show edit update destroy start]
   before_action :set_user, only: :start
 
@@ -39,8 +40,8 @@ class TestsController < ApplicationController
   end
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.completed_test(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.completed_test(@test)
   end
 
   private
@@ -51,10 +52,6 @@ class TestsController < ApplicationController
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def set_user
-    @user = User.first
   end
 
 end
