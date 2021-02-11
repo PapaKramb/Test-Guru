@@ -19,4 +19,8 @@ class User < ApplicationRecord
     completed_tests.order(id: :desc).find_by(test: test)
   end
 
+  def admin?
+    type == 'Admin'
+  end
+
 end
