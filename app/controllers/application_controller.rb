@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
       if resource.is_a?(Admin)
         admin_tests_path
       else
-        super
+        tests_path
       end
   end
 
