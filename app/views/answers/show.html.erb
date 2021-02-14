@@ -4,5 +4,6 @@
   <%= @answer.correct %>
 </p>
  <p>
+  <%= link_to 'Edit', question_path(@answer.question) %>
   <%= link_to 'Back', tests_path %>
 </p>
