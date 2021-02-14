@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :completed_tests, only: %i[show update] do
     member do
       get :result
+      post :gist
     end
   end
 
