@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   resources :completed_tests, only: %i[show update] do
     member do
       get :result
-      post :gist
     end
+    resource :gist, only: :create
   end
 
   namespace :admin do
@@ -29,6 +29,8 @@ Rails.application.routes.draw do
         resources :answers, except: :index, shallow: true
       end
     end
+    resources :gists, only: :index
   end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

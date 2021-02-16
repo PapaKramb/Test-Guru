@@ -1,9 +1,11 @@
 class GistQuestionService
 
-  def initialize(question, client: nil)
+  ACCESS_TOKEN = Rails.application.credentials.github
+
+  def initialize(question, client: Octokit::Client.new(access_token: ACCESS_TOKEN))
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
@@ -14,7 +16,7 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "A qestion about #{@test.title} from TestGuru",
+      description: I18n.t('.description', title: @test.title),
       files: {
         'test-guru-question.txt': {
           content: gist_content
@@ -30,3 +32,4 @@ class GistQuestionService
   end
 
 end
+

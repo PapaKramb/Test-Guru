@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+
+  completed_tests:
+  result:
+    header: "Test %{title} completed successfully"
+  gist:
+    success: "Gist completed successfully"
+    failure: "An error occurred while saving the gist"
+
+  description: "Test question from %{title} от TestGuru"

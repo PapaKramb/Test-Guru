@@ -2,6 +2,9 @@ ru:
   completed_tests:
     result:
       header: "Тест %{title} успешно завершен"
-    gist:
-      success: "Gist успешно сохранен"
-      failure: "Во время сохранения gist произошла ошибка"
+      
+  gists:
+    success: "Gist успешно сохранен"
+    failure: "Во время сохранения gist произошла ошибка"
+
+  description: "Вопрос из теста %{title} от TestGuru"
