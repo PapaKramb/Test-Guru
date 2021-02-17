@@ -18,18 +18,6 @@ class CompletedTestsController < ApplicationController
     end
   end
 
-  # def gist
-  #   result = GistQuestionService.new(@completed_test.current_question).call
-
-  #   flash_options = if result.success?
-  #     { notice: t('.success') }
-  #   else
-  #     { alert: t('.failure') }
-  #   end
-
-  #   redirect_to @completed_test, flash_options
-  # end
-
   private
 
   def set_completed_test
