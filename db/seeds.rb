@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-return if User.exists?
-users = User.create!(
-  [
-    {email: 'test@mail.com', password_digest: '123456'},
-    {email: 'test1@mail.com', password_digest: '654321'},
-    {email: 'padavan@mail.com', password_digest: 'qwerty'}
-  ]
-)
+# return if User.exists?
+# users = User.create!(
+#   [
+#     {email: 'test@mail.com', password_digest: '123456'},
+#     {email: 'test1@mail.com', password_digest: '654321'},
+#     {email: 'padavan@mail.com', password_digest: 'qwerty'}
+#   ]
+# )
 
 return if Category.exists?
 categories = Category.create!(
@@ -27,9 +27,9 @@ categories = Category.create!(
 return if Test.exists?
 tests = Test.create!(
   [
-    {title: 'Ruby on Rails', category: categories[0], level: 3, author: users[0]},
-    {title: 'HyperText Markup Language', category: categories[1], level: 2, author: users[1]},
-    {title: 'Cascading Style Sheets', category: categories[2], level: 1, author: users[2]}
+    {title: 'Ruby on Rails', category: categories[0], level: 3},
+    {title: 'HyperText Markup Language', category: categories[1], level: 2},
+    {title: 'Cascading Style Sheets', category: categories[2], level: 1}
   ]
 )
 

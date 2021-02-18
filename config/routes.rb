@@ -17,10 +17,11 @@ Rails.application.routes.draw do
   end
 
   resources :completed_tests, only: %i[show update] do
+    resource :gists, only: :create
     member do
       get :result
+      post :gist
     end
-    resource :gist, only: :create
   end
 
   namespace :admin do
