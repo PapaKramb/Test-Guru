@@ -2,9 +2,29 @@ ru:
   completed_tests:
     result:
       header: "Тест %{title} успешно завершен"
-      
+  
   gists:
     success: "Gist успешно сохранен"
     failure: "Во время сохранения gist произошла ошибка"
+ 
+  admin:
+    gists:
+      index:
+        test: "Тест"
+        question: "Вопрос"
+        author: "Автор"
+        link: "Ссылка"
 
   description: "Вопрос из теста %{title} от TestGuru"
+
+  devise:
+    sessions:
+      user:
+        signed_in: "Вы успешно вошли вошли в систему!"
+    failure:
+      user:
+        unauthenticated: "Вы успешно вышли из системы!"
+        not_found_in_database: "Нет такого пользователя!"
+    confirmations:
+      user:
+        confirmed: "Ваш аккаунт подтвержден!"

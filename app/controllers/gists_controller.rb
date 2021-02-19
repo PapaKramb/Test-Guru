@@ -4,12 +4,12 @@ class GistsController < ApplicationController
   before_action :find_completed_test, only: :create
 
   def create
-    result = GistQuestionService.new(@completed_test.current_question)
-    result.call
+    service = GistQuestionService.new(@completed_test.current_question)
+    result = service.call
 
-    if result.success?
-      Gist.create!(user: current_user, question_id: @completed_test.current_question.id, url: result.url)
-      redirect_to @completed_test, notice: t('.success', url: result.url)
+    if service.success?
+      Gist.create!(user: current_user, question_id: @completed_test.current_question.id, url: result.html_url)
+      redirect_to @completed_test, notice: t('.success', url: result.html_url)
     else
       redirect_to @completed_test, alert: t('.failure')
     end

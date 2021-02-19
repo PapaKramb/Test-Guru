@@ -2,8 +2,6 @@ class GistQuestionService
 
   ACCESS_TOKEN = Rails.application.credentials.github
 
-  attr_reader :client
-
   def initialize(question, client: Octokit::Client.new(access_token: ACCESS_TOKEN))
     @question = question
     @test = @question.test
@@ -15,11 +13,11 @@ class GistQuestionService
   end
 
   def success?
-    (200..209).include?(self.client.last_response.status.to_i)
+    @client.last_response.status == 201
   end
 
   def url
-    self.client.last_response.headers[:location]
+    @client.last_response.headers[:location]
   end
 
   private
