@@ -9,9 +9,9 @@
 return if User.exists?
 users = User.create!(
   [
-    {email: 'test@mail.com', password_digest: '123456'},
-    {email: 'test1@mail.com', password_digest: '654321'},
-    {email: 'padavan@mail.com', password_digest: 'qwerty'}
+    {first_name: 'Alexey', last_name: 'Rodionov', email: 'test@mail.com', password: '123456', password_confirmation: '123456', type: 'User'},
+    {first_name: 'Rodion', last_name: 'Lekseev', email: 'test1@mail.com', password: '654321', password_confirmation: '654321', type: 'Admin'},
+    {first_name: 'Grogu', last_name: 'BabyYouda', email: 'padavan@mail.com', password: 'qwerty', password_confirmation: 'qwerty', type: 'User'}
   ]
 )
 
@@ -27,9 +27,9 @@ categories = Category.create!(
 return if Test.exists?
 tests = Test.create!(
   [
-    {title: 'Ruby on Rails', category: categories[0], level: 3, author: users[0]},
+    {title: 'Ruby on Rails', category: categories[0], level: 3, author: users[1]},
     {title: 'HyperText Markup Language', category: categories[1], level: 2, author: users[1]},
-    {title: 'Cascading Style Sheets', category: categories[2], level: 1, author: users[2]}
+    {title: 'Cascading Style Sheets', category: categories[2], level: 1, author: users[1]}
   ]
 )
 

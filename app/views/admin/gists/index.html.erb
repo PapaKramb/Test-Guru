@@ -1,0 +1,14 @@
+<h1>Gists</h1>
+
+<table class="table">
+  <thead>
+    <th scope="col"><%= t('.test') %></th>
+    <th scope="col"><%= t('.question') %></th>
+    <th scope="col"><%= t('.author') %></th>
+    <th scope="col"><%= t('.link') %></th>
+  </thead>
+    <%= render @gists %>
+</table>
+<p>
+  <%= link_to 'Back', admin_tests_path %>
+</p>

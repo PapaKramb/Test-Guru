@@ -23,4 +23,5 @@ class CompletedTestsController < ApplicationController
   def set_completed_test
     @completed_test = CompletedTest.find(params[:id])
   end
+
 end

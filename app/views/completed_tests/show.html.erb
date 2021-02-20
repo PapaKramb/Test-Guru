@@ -2,9 +2,9 @@
 
 <h2>Question #<%= @completed_test.current_question_number %> of <%= @completed_test.questions_count %></h2>
 
-<strong>
-  <%= @completed_test.current_question.body %>
-</strong>
+<p>
+  <b><%= @completed_test.current_question.body %></b>
+</p>
 
 <%= form_with url: completed_test_path(@completed_test), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @completed_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
@@ -14,6 +14,9 @@
     </p>
     <% end %>
 
+  <p>
+    <%= link_to 'Gist Question', completed_test_gists_path(@completed_test), method: :post %>
+  </p>
   <p>
     <%= form.submit 'Next' %>
   </p>

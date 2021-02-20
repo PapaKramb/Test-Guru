@@ -1,0 +1,31 @@
+ru:
+  completed_tests:
+    result:
+      header: "Тест %{title} успешно завершен"
+  
+  gists:
+    success: <a href=%{url} target="_blank" rel="nofollow">Gist </a>успешно сохранен
+    failure: "Во время сохранения gist произошла ошибка"
+ 
+  admin:
+    gists:
+      index:
+        test: "Тест"
+        question: "Вопрос"
+        author: "Автор"
+        link: "Ссылка"
+
+  description: "Вопрос из теста %{title} от TestGuru"
+
+  devise:
+    sessions:
+      user:
+        signed_in: "Вы успешно вошли вошли в систему!"
+    failure:
+      user:
+        unauthenticated: "Вы успешно вышли из системы!"
+        not_found_in_database: "Нет такого пользователя!"
+        invalid: "Пожалуйста заполните форму корректно!"
+    confirmations:
+      user:
+        confirmed: "Ваш аккаунт подтвержден!"

@@ -31,3 +31,33 @@
 
 en:
   hello: "Hello world"
+
+  completed_tests:
+  result:
+    header: "Test %{title} completed successfully"
+  gists:
+    success: "Gist completed successfully"
+    failure: "An error occurred while saving the gist"
+
+  admin:
+    gists:
+      index:
+        test: "Test"
+        question: "Question"
+        author: "Author"
+        link: "Link"
+
+  description: "Test question from %{title} от TestGuru"
+
+  devise:
+    sessions:
+      user:
+        signed_in: "You have successfully logged in to the system!"
+    failure:
+      user:
+        unauthenticated: "You have successfully logged out!"
+        not_found_in_database: "There is no such user!"
+        invalid: "Please fill out the form correctly"
+    confirmations:
+      user:
+        confirmed: "Your account is confirmed!"

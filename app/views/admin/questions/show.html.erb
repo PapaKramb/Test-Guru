@@ -2,7 +2,14 @@
   <strong>Questions:</strong>
   <%= @question.body %>
 </p>
+<p>
+  <strong>Answers:</strong>
+  <%= render @question.answers %>
+</p>
+<p>
+  <%= link_to 'New answer', new_admin_question_answer_path(@question), class: 'btn' %><br>
+</p>
  <p>
   <%= link_to 'Edit', edit_admin_question_path(@question) %>
-  <%= link_to 'Back', admin_tests_path(@question.test) %>
+  <%= link_to 'Back', admin_test_path(@question.test) %>
 </p>

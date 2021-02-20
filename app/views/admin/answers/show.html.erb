@@ -1,0 +1,9 @@
+<p>
+  <strong>Answers:</strong>
+  <%= @answer.body %>
+  <%= @answer.correct %>
+</p>
+ <p>
+  <%= link_to 'Back', admin_answer_path(@answer) %>
+  <%= link_to 'Edit', edit_admin_answer_path(@answer) %>
+</p>
