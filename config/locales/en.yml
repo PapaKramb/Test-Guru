@@ -57,6 +57,7 @@ en:
       user:
         unauthenticated: "You have successfully logged out!"
         not_found_in_database: "There is no such user!"
+        invalid: "Please fill out the form correctly"
     confirmations:
       user:
         confirmed: "Your account is confirmed!"

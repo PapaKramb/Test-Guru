@@ -25,6 +25,7 @@ ru:
       user:
         unauthenticated: "Вы успешно вышли из системы!"
         not_found_in_database: "Нет такого пользователя!"
+        invalid: "Пожалуйста заполните форму корректно!"
     confirmations:
       user:
         confirmed: "Ваш аккаунт подтвержден!"
