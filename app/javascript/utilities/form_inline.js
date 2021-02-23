@@ -11,7 +11,7 @@ document.addEventListener('turbolinks:load', function() {
 
   if (errors) {
     var resourceId = errors.dataset.resourceId
-    formInlineHandler(res)
+    formInlineHandler(resourceId)
   }
 })
 
