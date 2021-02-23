@@ -46,6 +46,13 @@ en:
         question: "Question"
         author: "Author"
         link: "Link"
+    tests:
+      create:
+        success: "Test created successfully"
+      index:
+        header: "Tricky Tests"
+      form_inline:
+        submit: "OK"
 
   description: "Test question from %{title} от TestGuru"
 
