@@ -1,5 +1,5 @@
 document.addEventListener('turbolinks:load', function() {
-  let controls = document.querySelectorAll('.form-inline-link')
+  let controls = document.querySelectorAll('.js-form-inline-link')
 
   if (controls.length) {
     for (let i = 0; i < controls.length; i++) {
@@ -23,7 +23,7 @@ function formInlineLinkHandler(event) {
 }
 
 function formInlineHandler(testId) {
-  let link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
+  let link = document.querySelector('.js-form-inline-link[data-test-id="' + testId + '"]')
   let testTitle = document.querySelector('.test-title[data-test-id="' + testId + '"]')
   let formInline = document.querySelector('.form-inline[data-test-id="' + testId + '"]')
 
