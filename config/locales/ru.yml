@@ -1,4 +1,12 @@
 ru:
+  # activerecord:
+  #   errors:
+  #     models:
+  #       test:
+  #         attributes:
+  #           title: "Ошибка"
+  #           blank: "Название не может быть пустым"
+
   completed_tests:
     result:
       header: "Тест %{title} успешно завершен"
@@ -14,6 +22,13 @@ ru:
         question: "Вопрос"
         author: "Автор"
         link: "Ссылка"
+    tests:
+      create:
+        success: "Teст успешно создан"
+      index:
+        header: "Доступные тесты"
+      form_inline:
+        submit: "ОК"
 
   description: "Вопрос из теста %{title} от TestGuru"
 
