@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_093840) do
+ActiveRecord::Schema.define(version: 2021_02_26_091715) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2021_02_15_093840) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -68,6 +76,15 @@ ActiveRecord::Schema.define(version: 2021_02_15_093840) do
     t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
+  create_table "userbadges", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_userbadges_on_badge_id"
+    t.index ["user_id"], name: "index_userbadges_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -103,4 +120,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_093840) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users"
+  add_foreign_key "userbadges", "badges"
+  add_foreign_key "userbadges", "users"
 end
