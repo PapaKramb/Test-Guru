@@ -11,3 +11,15 @@
 </p>
 
 <%= link_to 'Back to tests', tests_path %>
+
+<% if @completed_test.test_passed? %>
+  <div class="alert alert-success" role="alert">
+    <h3 class="alert-heading"><%= t('.success', title: @completed_test.test.title) %></h3>
+    <p class="mb-0"><%= t('.percent') %> <%= @completed_test.test_result.to_i %>%</p>
+  </div>
+<% else %>
+  <div class="alert alert-danger" role="alert">
+    <h3 class="alert-heading"><%= t('.failure', title: @completed_test.test.title) %></h3>
+    <p class='mb-0'><%= t('.percent') %> <%= @completed_test.test_result.to_i %>%</p>
+  </div>
+<% end %>

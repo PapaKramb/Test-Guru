@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :completed_tests
   has_many :tests, through: :completed_tests
   has_many :authored_tests, class_name: 'Test'
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges
 
   validates :email, uniqueness: true, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Invalid email format' }
 
@@ -21,6 +23,10 @@ class User < ApplicationRecord
 
   def admin?
     type == 'Admin'
+  end
+
+  def tests_passed(test_ids)
+    self.completed_tests.successfully.where(test_id: test_ids).map(&:test_id).uniq.sort
   end
 
 end

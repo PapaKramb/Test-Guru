@@ -11,6 +11,10 @@ class CompletedTestsController < ApplicationController
     @completed_test.accept!(params[:answer_ids])
     
     if @completed_test.completed?
+      if @completed_test.test_passed?
+        @completed_test.update_attributes(successfully: true)
+        UserBadgeService.new(@completed_test).badges_unlock
+      end
       TestsMailer.completed_test(@completed_test).deliver_now
       redirect_to result_completed_test_path(@completed_test)
     else

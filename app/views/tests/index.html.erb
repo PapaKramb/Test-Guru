@@ -1,14 +1,24 @@
-<h1>Tests</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Level:</th>
-      <th>Categories:</th>
-      <th>Questions count:</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @tests %>
-  </tbody>
-</table>
+<div class="row mt-3">
+  <div class="col col-md">
+    <h1 class="display-4 text-center"><%= t('.header') %></h1>
+    <table class="table text-center mt-3">
+      <thead>
+        <tr>
+          <th scope="col" class="sort-by-title pointer">
+            <%= t('.title') %>
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success hide' %>
+          </th>
+          <th scope="col"><%= t('.level') %></th>
+          <th scope="col"><%= t('.category') %></th>
+          <th scope="col"><%= t('.questions') %></th>
+          <th scope="col"><%= t('.actions') %></th>
+          <th scope="col" data-toggle="tooltip" data-placement="top" title="<%= t('.info') %>"><%= t('.status') %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
+    </table>
+  </div>
+</div>

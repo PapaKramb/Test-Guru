@@ -1,0 +1,13 @@
+
+<tr>
+  <td class="align-middle"><%= badge.title %></td>
+  <td class="align-middle"><%= badge.image %></td>
+  <td class="align-middle"><%= badge.rule %></td>
+  <td class="align-middle"><%= badge.description %></td>
+  <td class="align-middle">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <%= link_to 'Show', admin_badge_path(badge), class: 'btn btn-outline-secondary' %>
+      <%= link_to 'Edit', edit_admin_badge_path(badge), class: 'btn btn-outline-secondary' %>
+      <%= link_to 'Delete', admin_badge_path(badge), method: :delete, data: { confirm: t('.confirm')}, class: 'btn btn-outline-secondary' %>
+    </div>
+  </td>
