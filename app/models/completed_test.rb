@@ -14,7 +14,7 @@ class CompletedTest < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || !time_is_up?
   end
 
   def spent_time
