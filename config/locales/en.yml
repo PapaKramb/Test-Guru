@@ -32,12 +32,42 @@
 en:
   hello: "Hello world"
 
+  tests:
+    index:
+      header: "List of Tests"
+      category: "Category"
+      title: "Title"
+      level: "Level"
+      author: "Author"
+      questions: "Questions"
+      actions: "Actions"
+      status: "Status"
+      info: "Green - the test is passed.\nRed - test failed.\nDark-the test has not been passed yet."
+
   completed_tests:
   result:
     header: "Test %{title} completed successfully"
   gists:
     success: "Gist completed successfully"
     failure: "An error occurred while saving the gist"
+
+  badges:
+    index:
+      header: "List Badges"
+      title: "Title"
+      image: "Image"
+      description: "Description"
+      current_badges: "My badges"
+      back: "Back"
+    current:
+      header: "My Badge"
+      title: "Title"
+      image: "Image"
+      description: "Description"
+      badge_list: "List Badges"
+      back: "Back"
+      no_badges: "You don't have Badges yet"
+ 
 
   admin:
     gists:
@@ -51,8 +81,56 @@ en:
         success: "Test created successfully"
       index:
         header: "Tricky Tests"
+        category: "Category"
+        title: "Title"
+        level: "level"
+        author: "Author"
+        questions: "Question"
+        actions: "Actions"
+        status: "Status"
+        info: "Green - the test is passed.\nRed - test failed.\nDark-the test has not been passed yet."
       form_inline:
         submit: "OK"
+
+    badges:
+      form:
+        info_button: "Information about selecting the condition parameter"
+        info: "For categories: Backend - 1 или Frontend - 2\nFor levels: 0 - 100"
+        rule: "Select a rule"
+      edit:
+        header: "Change Your Badge"
+        back: "Back"
+      new:
+        header: "New Badge"
+        back: "Back"
+      show:
+        header: "Information about the Badge"
+        title: "Title:"
+        image: Image:"
+        rule: "Receipt rule:"
+        description: "Description:"
+        edit: "Edit"
+        back: "Back"
+      index:
+        header: "List Badges"
+        title: "Title"
+        image: "Image"
+        rule: "Receipt rule"
+        description: "Description"
+        actions: "Action"
+        new_badge: "New Badge"
+        back: "Back"
+      badge:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
+      create: 
+        success: "The badge was successfully created!"
+      update: 
+        success: "The badge was successfully updated!"
+      destroy: 
+        success: "The badge was successfully deleted!"
 
   description: "Test question from %{title} от TestGuru"
 
