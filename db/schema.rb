@@ -22,11 +22,10 @@ ActiveRecord::Schema.define(version: 2021_02_26_180841) do
   end
 
   create_table "badges", force: :cascade do |t|
+    t.integer "rule", null: false
     t.string "title", null: false
-    t.string "rule", null: false
     t.string "image", null: false
     t.string "description", null: false
-    t.integer "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
