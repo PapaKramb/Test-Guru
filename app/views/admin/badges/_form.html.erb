@@ -17,6 +17,11 @@
       <%= f.select :rule, options_for_select(BadgesHelper::BADGE_LIST), { include_blank: t('.rule') }, class: 'form-control' %>
     </p>
 
+    <p>
+      <%= f.label :value %>
+      <%= f.text_field :value, id: :value, class: 'form-control' %>
+    </p>
+
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
         <p><%= t('.info') %></p>
