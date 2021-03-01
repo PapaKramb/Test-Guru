@@ -8,6 +8,8 @@ class Test < ApplicationRecord
   validates :title, uniqueness: { scope: :level }, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }, presence: true
 
+  scope :with_questions, -> { joins(:questions).group('tests.id') }
+
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }

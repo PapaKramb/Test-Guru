@@ -26,8 +26,8 @@
     <%= link_to 'Gist Question', completed_test_gists_path(@completed_test), method: :post %>
   </p>
   <p>
-    <%= form.submit 'Next' %>
+    <%= form.submit t('.next') %>
   </p>
 <% end %>
 
-<%= link_to 'Back to Tests', tests_path %>
+<%= link_to t('.back'), tests_path %>

@@ -3,7 +3,7 @@
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.category.title %></td>
   <td class="align-middle"><%= test.questions.count %></td>
-  <td class="align-middle"><%= button_to 'Start', start_test_path(test) %></td>
+  <td class="align-middle"><%= button_to t('.start'), start_test_path(test) %></td>
   <td class="align-middle">
   <% if current_user.completed_test(test) %>
     <% if current_user.completed_test(test).successfully %>

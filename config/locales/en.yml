@@ -43,13 +43,22 @@ en:
       actions: "Actions"
       status: "Status"
       info: "Green - the test is passed.\nRed - test failed.\nDark-the test has not been passed yet."
+      badge_list: "Badges List"
+    test:
+      start: 'Start'
 
   completed_tests:
-  result:
-    header: "Test %{title} completed successfully"
-  gists:
-    success: "Gist completed successfully"
-    failure: "An error occurred while saving the gist"
+    show:
+      next: "Next"
+      back: "Back to tests" 
+    result:
+      header: "Test %{title} completed successfully"
+      success: "You have successfully completed the %{title} test. You're doing great, keep it up!"
+      failure: "You couldn't pass the %{title} test. Try again, you will definitely succeed!"
+      percent: "Percent"
+    gists:
+      success: "Gist completed successfully"
+      failure: "An error occurred while saving the gist"
 
   badges:
     index:
@@ -80,6 +89,7 @@ en:
       create:
         success: "Test created successfully"
       index:
+        new_badge: "New Badge"
         header: "Tricky Tests"
         category: "Category"
         title: "Title"
@@ -91,12 +101,12 @@ en:
         info: "Green - the test is passed.\nRed - test failed.\nDark-the test has not been passed yet."
       form_inline:
         submit: "OK"
-
     badges:
       form:
         info_button: "Information about selecting the condition parameter"
         info: "For categories: Backend - 1 или Frontend - 2\nFor levels: 0 - 100"
         rule: "Select a rule"
+        create_badge: "Create Badge"
       edit:
         header: "Change Your Badge"
         back: "Back"

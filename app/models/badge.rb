@@ -7,5 +7,6 @@ class Badge < ApplicationRecord
   validates :rule, presence: true
   validates :image, presence: true
   validates :description, presence: true
+  enum BADGE_LIST: [:first_try, :all_tests_by_category, :all_tests_by_level]
 
 end

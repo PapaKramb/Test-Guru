@@ -1,6 +1,7 @@
 class Admin::BadgesController < Admin::BaseController
 
   before_action :set_badge, only: %i[show edit update destroy]
+  before_action :set_images, only: %i[new edit update create]
 
   def index
     @badges = Badge.all
@@ -43,6 +44,11 @@ class Admin::BadgesController < Admin::BaseController
 
   def set_badge
     @badge = Badge.find(params[:id])
+  end
+
+  def set_images
+    lib_badges = File.join('**', 'app/assets/images/badges', '*')
+    @images = Dir.glob(lib_badges).map { |image| "badges/#{image.split('/').last}" }
   end
   
 end

@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index do
+    get :current, on: :collection
+  end
+
   namespace :admin do
 
     resources :badges

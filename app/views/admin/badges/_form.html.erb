@@ -9,7 +9,7 @@
 
     <p>
       <%= f.label :image %>
-      <%= f.text_field :image, id: :badge_image, placeholder: "badge1.png", class: 'form-control' %>
+      <%= f.select :image, @images, class: 'form-control' %>
     </p>
 
     <p>
@@ -17,16 +17,6 @@
       <%= f.select :rule, options_for_select(BadgesHelper::BADGE_LIST), { include_blank: t('.rule') }, class: 'form-control' %>
     </p>
 
-    <p>
-      <%= f.label :value %>
-      <%= f.text_field :value, id: :value, class: 'form-control' %>
-    </p>
-
-    <p>
-      <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <%= t('.info_buttopn') %>
-      </button>
-    </p>
     <div class="collapse" id="collapseExample">
       <div class="card card-body">
         <p><%= t('.info') %></p>
@@ -38,6 +28,6 @@
       <%= f.text_area :description, id: :badge_description, rows: 7, cols: 60, class: 'form-control' %>
     </p>
 
-    <%= f.submit class: 'btn btn-success btn-lg mt-2' %>
+    <%= f.submit t('.create_badge'), class: 'btn btn-success btn-lg mt-2' %>
   </div>
 <% end %> 
