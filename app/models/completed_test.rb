@@ -14,7 +14,16 @@ class CompletedTest < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || !time_is_up?
+  end
+
+  def spent_time
+    return test.timer if created_at == updated_at
+    (created_at + test.timer - Time.now).to_i
+  end
+
+  def time_is_up?
+    spent_time > 0
   end
 
   def test_result

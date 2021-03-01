@@ -18,9 +18,9 @@ users = User.create!(
 return if Category.exists?
 categories = Category.create!(
   [
-    {title: 'Ruby'},
-    {title: 'HTML'},
-    {title: 'CSS'}
+    {title: 'Backend'},
+    {title: 'Frontend'},
+    {title: 'Machine Learning'}
   ]
 )
 
@@ -29,7 +29,7 @@ tests = Test.create!(
   [
     {title: 'Ruby on Rails', category: categories[0], level: 3, author: users[1]},
     {title: 'HyperText Markup Language', category: categories[1], level: 2, author: users[1]},
-    {title: 'Cascading Style Sheets', category: categories[2], level: 1, author: users[1]}
+    {title: 'Python', category: categories[2], level: 1, author: users[1]}
   ]
 )
 

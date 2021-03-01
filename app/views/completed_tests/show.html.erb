@@ -2,6 +2,8 @@
 
 <h2>Question #<%= @completed_test.current_question_number %> of <%= @completed_test.questions_count %></h2>
 
+<%= render 'shared/timer' if @completed_test.spent_time %>
+
 <div class="progress">
   <%= content_tag :div, '',
                   class: 'progress progress-bar progress-bar-striped progress-bar-animated bg-info',
