@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Invalid email format' }
 
   def user_tests_level(level)
-    tests.where(level: level)
+    tests.by_level(level)
   end
 
   def completed_test(test)

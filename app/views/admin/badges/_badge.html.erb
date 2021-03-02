@@ -1,7 +1,7 @@
 <tr>
   <td class="align-middle"><%= badge.title %></td>
   <td class="align-middle">
-    <img src="/assets/<%= badge.image %>" class="mr-3">
+    <%= image_tag badge.image, class: 'mr-3' %>
   </td>
   <td class="align-middle"><%= badge.rule %></td>
   <td class="align-middle"><%= badge.description %></td>
@@ -12,3 +12,4 @@
       <%= link_to t('.delete'), admin_badge_path(badge), method: :delete, data: { confirm: t('.confirm')}, class: 'btn btn-outline-secondary' %>
     </div>
   </td>
+</tr>

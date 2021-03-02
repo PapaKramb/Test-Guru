@@ -1,7 +1,7 @@
 <tr>
   <td class="align-middle"><%= badge.title %></td>
   <td class="align-middle">
-    <img src="/assets/<%= badge.image %>" class="mr-3">
+    <%= image_tag badge.image, class: 'mr-3' %>
   </td>
   <td class="align-middle"><%= badge.description %></td>
 </tr>

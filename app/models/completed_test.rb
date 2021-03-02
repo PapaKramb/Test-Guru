@@ -7,8 +7,6 @@ class CompletedTest < ApplicationRecord
 
   before_validation :before_validation_set_current_question
 
-  scope :successfully, -> { where(successfully: true) }
-
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
 
