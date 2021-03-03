@@ -1,12 +1,17 @@
 ru:
-  # activerecord:
-  #   errors:
-  #     models:
-  #       test:
-  #         attributes:
-  #           title: "Ошибка"
-  #           blank: "Название не может быть пустым"
-
+  tests:
+    index:
+      header: "Список Тестов"
+      category: "Категория"
+      title: "Название"
+      level: "Уровень"
+      author: "Автор"
+      questions: "Вопросы"
+      actions: "Действия"
+      status: "Статус"
+      info: "Зеленый - тест пройден.\nКрасный - тест не пройден.\nТемный - тест еще не проходился."
+      badge_list: "Список Бейджей"
+  
   completed_tests:
     result:
       header: "Тест %{title} успешно завершен"
@@ -14,6 +19,24 @@ ru:
   gists:
     success: <a href=%{url} target="_blank" rel="nofollow">Gist </a>успешно сохранен
     failure: "Во время сохранения gist произошла ошибка"
+
+  badges:
+    index:
+      header: "Список Бейджей"
+      title: "Название"
+      rule: "Правило"
+      image: "Изображение"
+      rule_value: "Параметр"
+      current_badges: "Мои Бейджи"
+      back: "Назад"
+    current:
+      header: "Мои Бейджи"
+      title: "Название"
+      image: "Изображение"
+      rule_value: "Параметр"
+      badge_list: "Список Бейджей"
+      back: "Назад"
+      no_badges: "У вас пока нет Бейджей"
  
   admin:
     gists:
@@ -25,10 +48,63 @@ ru:
     tests:
       create:
         success: "Teст успешно создан"
-      index:
-        header: "Доступные тесты"
       form_inline:
         submit: "ОК"
+      index:
+        header: "Доступные тесты"
+        new_test: "Новый тест"
+        new_badge: "Новый Бейдж"
+        header: "Доступные тесты"
+        header: "Доступные тесты"
+        category: "Категория"
+        title: "Название"
+        level: "Уровень"
+        author: "Автор"
+        questions: "Вопросы"
+        actions: "Действия"
+        status: "Статус"
+        info: "Зеленый - тест пройден.\nКрасный - тест не пройден.\nТемный - тест еще не проходился."
+    badges:
+      form:
+        info_button: "Информация о выборе параметра условия"
+        info: "Для категорий: Backend - 1 или Frontend - 2\nДля уровней: 0 - 100"
+        rule: "Выберите правило"
+        create_badge: "Создать Бейдж"
+      edit:
+        header: "Изменить Бейдж"
+        back: "Назад"
+      new:
+        header: "Новый Бейдж"
+        image: "Изображение"
+        back: "Назад"
+      show:
+        header: "Информация о Бейдже"
+        title: "Название:"
+        image: "Изображение:"
+        rule: "Правило получения:"
+        rule_value: "Параметр"
+        edit: "Изменить"
+        back: "Назад"
+      index:
+        header: "Список Бейджей"
+        title: "Название"
+        image: "Изображение"
+        rule: "Правило получения"
+        rule_value: "Параметр"
+        actions: "Действия"
+        new_badge: "Новый Бейдж"
+        back: "Назад"
+      badge:
+        show: "Показать"
+        edit: "Изменить"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      create: 
+        success: "Бейдж был успешно создан!"
+      update: 
+        success: "Бейдж был успешно обновлен!"
+      destroy: 
+        success: "Бейдж был успешно удален!"
 
   description: "Вопрос из теста %{title} от TestGuru"
 
