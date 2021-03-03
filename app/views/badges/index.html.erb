@@ -1,0 +1,23 @@
+<div class="row mt-3">
+  <div class="col col-md">
+    <h1 class="display-4 text-center"><%= t('.header') %></h1>
+    <table class="table table-hover text-center mt-3">
+      <thead>
+      <tr>
+        <th scope="col"><%= t('.title') %></th>
+        <th scope="col"><%= t('.image') %></th>
+        <th scope="col"><%= t('.rule') %></th>
+        <th scope="col"><%= t('.rule_value') %></th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <%= render @badges %>
+        <p>
+          <%= link_to t('.current_badges'), current_badges_path, class: 'btn btn-primary btn-sm active' %>
+          <%= link_to t('.back'), tests_path, class: 'btn btn-secondary btn-sm active' %>
+        </p>
+      </tbody>
+    </table>
+  </div>
+</div>

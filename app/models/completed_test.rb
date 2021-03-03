@@ -9,6 +9,7 @@ class CompletedTest < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.passed = test_passed?
 
     save!
   end
