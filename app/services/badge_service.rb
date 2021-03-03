@@ -5,12 +5,6 @@ class BadgeService
     'passing_all_tests_by_level' =>      BadgeRuleSpecifications::PassingAllTestsByLevel
   }.freeze
 
-  # RULES = {
-  #   passing_test_on_first_try:       PassingTestOnFirstTry,
-  #   passing_all_tests_by_level:      PassingAllTestsByLevel,
-  #   passing_all_tests_from_category: PassingAllTestsFromCategory
-  # }.freeze
-
   def self.call(completed_test)
     new(completed_test).call
   end
