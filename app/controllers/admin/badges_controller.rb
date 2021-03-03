@@ -3,6 +3,10 @@ class Admin::BadgesController < Admin::BaseController
   before_action :find_badge, only: %i[edit update destroy show]
   before_action :set_images, only: %i[new edit update create]
 
+  def index
+    @badges = Badge.all
+  end
+
   def new
     @badge = Badge.new
   end

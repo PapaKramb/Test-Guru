@@ -1,7 +1,15 @@
 <h1>Tricky Tests</h1>
 
 <p>
-  <%= link_to "New test", new_admin_test_path %>
+  <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-outline-secondary btn-lg' %>
+</p>
+
+<p>
+  <%= link_to t('.new_badge'), admin_badges_path, class: 'btn btn-outline-secondary btn-lg' %>
+</p>
+
+<p>
+  <%= link_to "Gists", admin_gists_path, class: 'btn btn-outline-secondary btn-lg' %>
 </p>
 
 <%= render 'shared/errors', resource: @test %>
