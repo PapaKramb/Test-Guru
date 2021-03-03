@@ -93,7 +93,7 @@ en:
       current_badges: "My badges"
       back: "Back"
     current:
-      header: "My Badge"
+      user_header: "My Badge"
       title: "Title"
       image: "Image"
       rule_value: "Description"

@@ -30,7 +30,7 @@ ru:
       current_badges: "Мои Бейджи"
       back: "Назад"
     current:
-      header: "Мои Бейджи"
+      user_header: "Мои Бейджи"
       title: "Название"
       image: "Изображение"
       rule_value: "Параметр"
