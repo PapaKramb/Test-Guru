@@ -5,10 +5,13 @@ class CompletedTest < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
+  scope :success, -> { where('test_score >= ?', SUCCESS) }
+
   before_validation :before_validation_set_current_question
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
+    self.test_score = test_result
 
     save!
   end

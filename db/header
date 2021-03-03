@@ -1,0 +1,3 @@
+id  title        images             rule_type              rule_value  created_at                  updated_at                
+--  -----------  -----------------  ---------------------  ----------  --------------------------  --------------------------
+1   Badge First  badges/badge1.png  all_tests_by_category              2021-03-03 06:59:30.727505  2021-03-03 06:59:30.727505

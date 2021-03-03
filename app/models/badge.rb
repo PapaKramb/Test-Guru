@@ -4,7 +4,8 @@ class Badge < ApplicationRecord
   has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
 
-  validates :rules, presence: true
+  validates :rule_type, presence: true
   validates :images, presence: true
+  validates :title, presence: true
 
 end

@@ -11,6 +11,9 @@ class CompletedTestsController < ApplicationController
     @completed_test.accept!(params[:answer_ids])
     
     if @completed_test.completed?
+      if new_badges?
+        @completed_test.user.badges << new_badges
+      end
       TestsMailer.completed_test(@completed_test).deliver_now
       redirect_to result_completed_test_path(@completed_test)
     else
@@ -19,6 +22,14 @@ class CompletedTestsController < ApplicationController
   end
 
   private
+
+  def new_badges?
+    new_badges.length >= 1
+  end
+
+  def new_badges
+    @new_bages ||= BadgeService.new(@completed_test).badge_unlock
+  end
 
   def set_completed_test
     @completed_test = CompletedTest.find(params[:id])

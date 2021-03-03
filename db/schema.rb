@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_165009) do
+ActiveRecord::Schema.define(version: 2021_03_03_072001) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(version: 2021_03_02_165009) do
   end
 
   create_table "badges", force: :cascade do |t|
-    t.string "rules", null: false
+    t.string "title", null: false
     t.string "images", null: false
+    t.string "rule_type", null: false
+    t.string "rule_value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_165009) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "test_score"
     t.index ["current_question_id"], name: "index_completed_tests_on_current_question_id"
     t.index ["test_id"], name: "index_completed_tests_on_test_id"
     t.index ["user_id"], name: "index_completed_tests_on_user_id"
