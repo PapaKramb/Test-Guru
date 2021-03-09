@@ -10,21 +10,21 @@
   </head>
 
   <body>
-    <p class="nav title">
+    <nav class="navbar navbar-light bg-light">
       <h1><%= link_to 'TestGuru', root_path %></h1>
-    </p>
       
-    <p class="nav user">
-      <% if user_signed_in? %>
-          Welcome, <b><%= current_user.email %></b> Guru |
-          <b><%= link_to 'Logout', destroy_user_session_path, method: :delete %></b>
-      <% else %>
-          <b>
-            <%= link_to 'Registration', new_user_registration_path %> |
-            <%= link_to 'Login', new_user_session_path %>
-          </b>
-      <% end %>
-     </p>
+      <p class="nav user">
+        <% if user_signed_in? %>
+            Welcome, <b><%= current_user.email %></b> Guru |
+            <b><%= link_to 'Logout', destroy_user_session_path, method: :delete %></b>
+        <% else %>
+            <b>
+              <%= link_to 'Registration', new_user_registration_path %> |
+              <%= link_to 'Login', new_user_session_path %>
+            </b>
+        <% end %>
+      </span>
+    </nav>
 
       <%= render 'shared/flash' %>
 

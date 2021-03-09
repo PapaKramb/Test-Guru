@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index do
+    get :current, on: :collection
+  end
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member
@@ -31,6 +35,9 @@ Rails.application.routes.draw do
       end
     end
     resources :gists, only: :index
+    resources :badges do
+      get :current, on: :collection
+    end
   end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

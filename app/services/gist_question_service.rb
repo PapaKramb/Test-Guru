@@ -38,4 +38,3 @@ class GistQuestionService
   end
 
 end
-

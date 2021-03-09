@@ -18,4 +18,9 @@ class Test < ApplicationRecord
   def self.title_tests_categories(category)
     by_category(category).order(title: :desc).pluck(:title)
   end
+
+  def self.all_levels
+    pluck(:level).uniq
+  end
+  
 end

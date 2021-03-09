@@ -1,0 +1,27 @@
+<%= form_with model: [:admin, @badge], local: true do |f| %>
+  <div class="form-group col-md-8">
+    <%= render "shared/errors", resource: @badge %>
+
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title, id: :badge_title, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :images %>
+      <%= f.select :images, @images, id: :images, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :rule_type %>
+      <%= f.select :rule_type, Badge.rule_types.keys, class: 'form-control' %>
+    </p>
+
+    <p>
+      <%= f.label :rule_value %>
+      <%= f.text_field :rule_value, id: :rule_value, class: 'form-control' %>
+    </p>
+
+    <%= f.submit t('.create_badge'), class: 'btn btn-success btn-lg mt-2' %>
+  </div>
+<% end %>
